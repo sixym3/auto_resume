@@ -59,8 +59,8 @@ class account(object):
         self.person.update_address(address)
 
     def add_experience(self, ex):
-        if type(ex) == type(experience):
-            self.experiences.append(experience)
+        if isinstance(ex, experience):
+            self.experiences.append(ex)
             return True
         return False
 
@@ -73,5 +73,13 @@ class account(object):
             f.write(json.dumps(self.save()))
 
     def save(self):
-        return {"id": self.id, "person": self.person.save(), "experiences": [exp.save() for exp in self.experiences], "username": self.username, "password": self.password}
+        # try:
+        #     if len(self.experiences) > 0:
+        #         x = [exp.save() for exp in self.experiences]
+        #     else:
+        #         x = []
+        # except Exception:
+        #     print(Exception)
+        x = [exp.save() for exp in self.experiences]
+        return {"id": self.id, "person": self.person.save(), "experiences": x, "username": self.username, "password": self.password}
     

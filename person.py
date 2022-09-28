@@ -18,4 +18,4 @@ class person(object):
         self.address = address
 
     def save(self):
-        return str({"email": self.email, "address": self.address}) + ", "
+        return {"email": self.email, "address": self.address}

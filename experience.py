@@ -24,8 +24,14 @@ class experience(object):
         else:
             return ""
     
-    def get_titles(self):
+    def get_title(self):
         return self.title
+
+    def get_id(self):
+        return self.id
+
+    def get_summary(self):
+        return str(self.title) + ": " + str(self.description)
 
     def save(self):
         return {"type": self.type, "title": self.title, "description": self.description, "start_date": self.start_date, "end_date": self.end_date}
