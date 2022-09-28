@@ -1,5 +1,14 @@
 # auto_resume
 
+## To run program
+Install python3 and clone the repository
+Use the following command in the root directory of the repo to run
+```
+$ python3 cliservice.py
+```
+
+## Data structure design
+
 Account class:
 - id: integer
 - Person: Person object
